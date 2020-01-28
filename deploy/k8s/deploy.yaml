@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8sroles
+  labels:
+    app: backend
+
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  replicas: 2
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - image: k8sroles
+          name: production
+          ports:
+            - containerPort: 3000
