@@ -2,6 +2,8 @@
 dep:
 	kubectl create -f https://k8s.io/examples/admin/namespace-dev.json
 	kubectl create -f https://k8s.io/examples/admin/namespace-prod.json
+	kubectl apply -f ./deploy/k8s/deploy.yaml
+	kubectl apply -f ./deploy/k8s/service.yaml
 
 build: build.binary build.docker
 
@@ -10,7 +12,6 @@ build.binary:
 	GOOS=linux \
 	GOARCH=amd64 \
 	buffalo build  \
-	--tags=v0.0.0 \
 	-o bin/k8sroles \
 	&& chmod -R 0777 bin
 

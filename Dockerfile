@@ -6,9 +6,11 @@ RUN mkdir -p $GOPATH/src/github.com/slatunje/k8sroles
 WORKDIR $GOPATH/src/github.com/slatunje/k8sroles
 
 ADD . .
+
 ENV GO111MODULES=on
-RUN go get ./...
-RUN buffalo build --static -o /bin/k8sroles
+
+#RUN go get ./...
+#RUN buffalo build --static -o /bin/k8sroles
 
 FROM alpine
 RUN apk add --no-cache bash
@@ -16,7 +18,8 @@ RUN apk add --no-cache ca-certificates
 
 WORKDIR /bin/
 
-COPY --from=builder /bin/k8sroles .
+#COPY --from=builder /bin/k8sroles .
+COPY ./bin/k8sroles .
 
 ENV GO_ENV=production
 

@@ -1,0 +1,98 @@
+### === JSON
+
+POST http://127.0.0.1:3000/
+Content-Type: application/json
+
+{
+	"format": "json"
+}
+
+### === YAML
+
+POST http://127.0.0.1:3000/
+Content-Type: application/json
+
+{
+	"format": "yaml"
+}
+
+### === STRING
+
+POST http://127.0.0.1:3000/
+Content-Type: application/json
+
+{
+	"subject": "system:anonymous"
+}
+
+
+### === STRING
+
+POST http://127.0.0.1:3000/
+Content-Type: application/json
+
+{
+	"subject": "system:nodes"
+}
+
+### === REGEX
+
+POST http://127.0.0.1:3000/
+Content-Type: application/json
+
+{
+	"subject": "system:.*"
+}
+
+### === REGEX with Empty sString
+
+POST http://127.0.0.1:3000/
+Content-Type: application/json
+
+{
+	"subject": "system:.*,"
+}
+
+### === REGEX with Empty sString
+
+POST http://127.0.0.1:3000/
+Content-Type: application/json
+
+{
+	"subject": "system:kube-.*,system:serviceaccounts",
+	"format": "yaml",
+	"context": "docker-desktop"
+
+}
+
+### === REGEX with Empty sString
+
+POST http://127.0.0.1:3000/
+Content-Type: application/json
+
+{
+	"subject": "system:.*,",
+	"format": "yaml"
+}
+
+
+### === NON EXISTING
+
+POST http://127.0.0.1:3000/
+Content-Type: application/yaml
+
+{
+	"subject": "docker:compose",
+	"format": "yaml"
+}
+
+
+### === WRONG METHOD
+
+GET http://127.0.0.1:3000/
+Accept: application/json
+
+###
+
+
+

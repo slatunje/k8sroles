@@ -3,12 +3,12 @@ kind: Deployment
 metadata:
   name: k8sroles
   labels:
-    app: backend
+    app: k8sroles
 
 spec:
   selector:
     matchLabels:
-      app: backend
+      app: k8sroles
   replicas: 2
   minReadySeconds: 15
   strategy:
@@ -19,10 +19,10 @@ spec:
   template:
     metadata:
       labels:
-        app: backend
+        app: k8sroles
     spec:
       containers:
-        - image: k8sroles
-          name: production
+        - image: slatunje/k8sroles
+          name: k8sroles
           ports:
             - containerPort: 3000
