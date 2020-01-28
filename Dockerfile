@@ -2,8 +2,8 @@
 # https://docs.docker.com/engine/userguide/eng-image/multistage-build/
 FROM gobuffalo/buffalo:v0.15.4 as builder
 
-RUN mkdir -p $GOPATH/src/github.com/slatunje
-WORKDIR $GOPATH/src/github.com/slatunje
+RUN mkdir -p $GOPATH/src/github.com/slatunje/k8sroles
+WORKDIR $GOPATH/src/github.com/slatunje/k8sroles
 
 ADD . .
 ENV GO111MODULES=on

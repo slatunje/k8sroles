@@ -22,11 +22,8 @@ import (
 )
 
 const (
-	yamlFormat      = "yaml"
-	yamlContentType = "application/yaml"
-)
-
-const (
+	yamlFormat       = "yaml"
+	yamlContentType  = "application/yaml"
 	roleKind         = "RoleBinding"
 	svcAccountKind   = "ServiceAccount"
 	clusterKind      = "ClusterRoleBinding"
@@ -77,8 +74,6 @@ func HomeHandler(c buffalo.Context) error {
 		log.Printf("error generating kubernetes clientset from client config: %v\n", err)
 		return c.Render(http.StatusInternalServerError, r.JSON(map[string]string{"message": "server error"}))
 	}
-
-	// TODO: topic.Kind, subjectName, scope, sRole.Kind, sRole.Name, sRole.Source.Kind, sRole.Source.Name
 
 	type response struct {
 		Subject string

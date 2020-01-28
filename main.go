@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"k8sroles/actions"
+	"github.com/slatunje/k8sroles/actions"
 )
 
 // main is the starting point for your Buffalo application.
