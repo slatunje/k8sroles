@@ -1,4 +1,4 @@
-module k8sroles
+module github.com/slatunje/k8sroles
 
 go 1.13
 
@@ -17,17 +17,17 @@ require (
 	github.com/gobuffalo/packr/v2 v2.7.1
 	github.com/gobuffalo/suite v2.8.2+incompatible
 	github.com/gobuffalo/x v0.1.0
-	github.com/googleapis/gnostic v0.2.0
-	github.com/imdario/mergo v0.3.8
+	github.com/googleapis/gnostic v0.2.0 // indirect
+	github.com/imdario/mergo v0.3.8 // indirect
 	github.com/rs/cors v1.7.0
 	github.com/unrolled/secure v1.0.7
-	golang.org/x/crypto v0.0.0-20191206172530-e9b2fee46413
-	golang.org/x/net v0.0.0-20191126235420-ef20fe5d7933
-	golang.org/x/sys v0.0.0-20191128015809-6d18c012aee9
-	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15
+	golang.org/x/crypto v0.0.0-20191206172530-e9b2fee46413 // indirect
+	golang.org/x/net v0.0.0-20191126235420-ef20fe5d7933 // indirect
+	golang.org/x/sys v0.0.0-20191128015809-6d18c012aee9 // indirect
+	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect
 	gopkg.in/yaml.v2 v2.2.7
 	k8s.io/api v0.17.2
 	k8s.io/apimachinery v0.17.2
 	k8s.io/client-go v10.0.0+incompatible
-	k8s.io/utils v0.0.0-20200124190032-861946025e34
+	k8s.io/utils v0.0.0-20200124190032-861946025e34 // indirect
 )
